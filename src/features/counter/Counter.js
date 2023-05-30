@@ -5,15 +5,15 @@ import { useState } from "react";
 const Counter = () => {
   const count = useSelector((state) => state.counter.count);
   const dispatch = useDispatch();
-  const [incrementAmount, setIncrementAmount] = useState(0)
+  const [incrementAmount, setIncrementAmount] = useState(0);
 
-  const addValue = Number(incrementAmount) || 0
+  const addValue = Number(incrementAmount) || 0;
 
-  const resetAll = ()=> {
+  const resetAll = () => {
     setIncrementAmount(0);
     // reset global state
-    dispatch(reset())
-  }
+    dispatch(reset());
+  };
 
   return (
     <section>
@@ -27,6 +27,13 @@ const Counter = () => {
         value={incrementAmount}
         onChange={(e) => setIncrementAmount(e.target.value)}
       />
+
+      <div>
+        <button onClick={() => dispatch(incrementByAmount(addValue))}>
+          Add Amount
+        </button>
+        <button onClick={resetAll}>ResetAll</button>
+      </div>
     </section>
   );
 };
