@@ -7,6 +7,7 @@ const Counter = () => {
   const dispatch = useDispatch();
   const [incrementAmount, setIncrementAmount] = useState(0);
 
+  // value of addValue variable ( that we get from user input)  -  is payload for incrementByAmount action
   const addValue = Number(incrementAmount) || 0;
 
   const resetAll = () => {

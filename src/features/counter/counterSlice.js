@@ -3,12 +3,13 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   count: 0,
 };
+// invoking createSlice , and assigning to counterSlice.
 
 export const counterSlice = createSlice({
   name: "counter",
   initialState,
   reducers: {
-    // actions
+    // actions and corresponding reduser functions are combined
     increment: (state) => {
       state.count += 1;
     },
