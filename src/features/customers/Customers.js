@@ -14,8 +14,8 @@ export function Customers() {
 
       {customers?.length > 0 ? (
         <div>
-          {customers.map((customer) => (
-            <p>{customer}</p>
+          {customers.map((customer, index) => (
+            <p key={index}>{customer}</p>
           ))}
         </div>
       ) : (
